@@ -6,15 +6,4 @@ export type FCProps<T = unknown> = React.FC<
     T
 >;
 
-export enum STATUS {
-  LOADING = "loading",
-  ERROR = "error",
-  SUCCESS = "success",
-}
-
 export type { ITrendingCoinData } from "./validators/trending-coins-schema";
-
-export type APIResponse<TData> = {
-  status: STATUS;
-  data: TData | null;
-};
