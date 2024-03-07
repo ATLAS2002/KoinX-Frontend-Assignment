@@ -1,4 +1,4 @@
-import { cryptoAPI as api } from "@/api";
+import { localAPI as api } from "@/api";
 import { cn } from "@/lib/utils";
 import type { DecisionProps, FCProps } from "@/types";
 

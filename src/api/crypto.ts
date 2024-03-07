@@ -1,4 +1,4 @@
-import type { DecisionProps, ITrendingCoinData } from "@/types";
+import type { ITrendingCoinData } from "@/types";
 import { validateTrendingCoinData } from "@/validators/trending-coins-schema";
 import axios, { type AxiosInstance } from "axios";
 
@@ -12,14 +12,6 @@ export class CryptoAPI {
         "Content-Type": "application/json",
       },
     });
-  }
-
-  getAnalystEstimates(): DecisionProps {
-    return {
-      buy: 76,
-      hold: 8,
-      sell: 16,
-    };
   }
 
   async getTrendingCoins(): Promise<ITrendingCoinData | null> {

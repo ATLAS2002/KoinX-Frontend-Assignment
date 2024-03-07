@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "value": 80,
+      "color": "#0082FF",
+      "label": "Crowdsale investors"
+    },
+    {
+      "value": 20,
+      "color": "#FAA002",
+      "label": "Foundation"
+    }
+  ]
+}
