@@ -5,6 +5,7 @@ import { ReactQueryProvider } from "@/context/react-query-provider";
 import { Header } from "@/components/header";
 import { GetStartedCard } from "@/components/get-started-card";
 import { TrendingCoins } from "@/components/trending-coins";
+import { Team } from "@/components/team";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,11 +27,14 @@ export default function RootLayout({
           <main className="flex min-h-screen flex-col overflow-x-hidden bg-white-base">
             <section className="px-12 translate-x-1">
               <div className="w-full flex pt-12 h-screen flex-col lg:flex-row">
-                <div className="w-2/3 bg-green-400 h-screen">{children}</div>
-                <div className="w-1/3 flex flex-col gap-5 pl-5">
+                <div className="w-2/3 h-fit">
+                  {children}
+                  <Team />
+                </div>
+                <aside className="w-1/3 flex flex-col gap-5 pl-5">
                   <GetStartedCard />
                   <TrendingCoins />
-                </div>
+                </aside>
               </div>
             </section>
           </main>

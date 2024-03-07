@@ -7,3 +7,4 @@ export type FCProps<T = unknown> = React.FC<
 >;
 
 export type { ITrendingCoinData } from "./validators/trending-coins-schema";
+export type { ITeamMember } from "./validators/team-member-schema";

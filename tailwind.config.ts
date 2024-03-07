@@ -37,9 +37,11 @@ const config = {
           DEFAULT: "#FFFFFF",
           base: "#EFF2F5",
           off: "#F2F2F2",
+          gray: "#788F9B",
         },
         blue: {
           DEFAULT: "#0052FE",
+          100: "#E8F4FD",
           1000: "#0F1629",
           1100: "#0B182F",
         },

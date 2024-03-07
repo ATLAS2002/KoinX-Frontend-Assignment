@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import api from "@/api";
+import { cryptoAPI as api } from "@/api";
 import type { FCProps, ITrendingCoinData } from "@/types";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Triangle } from "./ui/triangle";
