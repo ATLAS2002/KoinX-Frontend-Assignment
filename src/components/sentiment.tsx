@@ -1,5 +1,5 @@
 import { FCProps } from "@/types";
-import { Info, Newspaper, TrendingUp } from "lucide-react";
+import { Bitcoin, Handshake, Info, Newspaper, TrendingUp } from "lucide-react";
 import { AnalystEstimates } from "./analyst-estimates";
 import {
   Carousel,
@@ -18,18 +18,18 @@ export const Sentiment: FCProps = () => {
         Key Events <Info />
       </h2>
       <Carousel>
-        <CarouselContent className="flex gap-4">
+        <CarouselContent className="flex pl-5 gap-4">
           <Item className="bg-blue-base">
             <Newspaper className="bg-blue-secondary text-white box-content p-4 rounded-full scale-90" />
           </Item>
           <Item className="bg-green-base">
             <TrendingUp className="bg-green-secondary text-white box-content p-4 rounded-full scale-90" />
           </Item>
-          <Item className="bg-blue-base">
-            <Newspaper className="bg-blue-secondary text-white box-content p-4 rounded-full scale-90" />
+          <Item className="bg-yellow-100">
+            <Bitcoin className="bg-yellow-500 text-white box-content p-4 rounded-full scale-90" />
           </Item>
-          <Item className="bg-green-base">
-            <TrendingUp className="bg-green-secondary text-white box-content p-4 rounded-full scale-90" />
+          <Item className="bg-purple-100">
+            <Handshake className="bg-purple-500 text-white box-content p-4 rounded-full scale-90" />
           </Item>
         </CarouselContent>
         <CarouselPrevious />
