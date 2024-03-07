@@ -8,8 +8,8 @@ import { Triangle } from "./ui/triangle";
 import { cn } from "@/lib/utils";
 
 const variant = [
-  "bg-failure-base text-failure-primary selection:bg-red-200",
-  "bg-success-base text-success-primary selection:bg-emerald-200",
+  "bg-red-base text-red-primary selection:bg-red-200",
+  "bg-green-base text-green-primary selection:bg-emerald-200",
 ];
 
 export const TrendingCoins: FCProps = () => {

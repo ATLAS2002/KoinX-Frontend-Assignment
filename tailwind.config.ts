@@ -37,21 +37,31 @@ const config = {
           DEFAULT: "#FFFFFF",
           base: "#EFF2F5",
           off: "#F2F2F2",
-          gray: "#788F9B",
+        },
+        grey: {
+          DEFAULT: "#788F9B",
+          200: "#C7C8CE",
+          400: "#7C7E8C",
+          600: "#3E5765",
+          700: "#44475B",
+          900: "#191C1F",
         },
         blue: {
-          DEFAULT: "#0052FE",
-          100: "#E8F4FD",
+          base: "#E8F4FD",
+          primary: "#0052FE",
+          secondary: "#0082FF",
           1000: "#0F1629",
           1100: "#0B182F",
         },
-        success: {
+        green: {
           base: "#EBF9F4",
           primary: "#14B079",
+          secondary: "#0FBA83",
         },
-        failure: {
+        red: {
           base: "#FBF0EF",
           primary: "#E96975",
+          secondary: "#F7324C",
         },
       },
     },

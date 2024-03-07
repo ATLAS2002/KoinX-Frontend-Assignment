@@ -4,7 +4,7 @@ import { FCProps } from "@/types";
 
 export const GetStartedCard: FCProps = () => {
   return (
-    <div className="w-full aspect-[426/515] flex flex-col gap-4 items-center p-10 rounded-2xl text-center bg-blue text-white selection:bg-blue-500">
+    <div className="w-full aspect-[426/515] flex flex-col gap-4 items-center p-10 rounded-2xl text-center bg-blue-primary text-white selection:bg-blue-secondary">
       <h1 className="font-bold text-2xl px-6">
         Get Started with KoinX for FREE
       </h1>

@@ -27,7 +27,7 @@ export default function RootLayout({
           <main className="flex min-h-screen flex-col overflow-x-hidden bg-white-base">
             <section className="px-12 translate-x-1">
               <div className="w-full flex pt-12 h-screen flex-col lg:flex-row">
-                <div className="w-2/3 h-fit">
+                <div className="flex flex-col w-2/3 h-fit gap-5">
                   {children}
                   <Team />
                 </div>

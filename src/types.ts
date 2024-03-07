@@ -6,5 +6,7 @@ export type FCProps<T = unknown> = React.FC<
     T
 >;
 
+export type DecisionProps = Record<"buy" | "hold" | "sell", number>;
+
 export type { ITrendingCoinData } from "./validators/trending-coins-schema";
 export type { ITeamMember } from "./validators/team-member-schema";
