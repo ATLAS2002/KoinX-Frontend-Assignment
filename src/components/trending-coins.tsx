@@ -6,6 +6,7 @@ import type { FCProps, ITrendingCoinData } from "@/types";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Triangle } from "./ui/triangle";
 import { cn } from "@/lib/utils";
+import { useTrendingCoinData } from "@/context/trending-coin-provider";
 
 const variant = [
   "bg-red-base text-red-primary selection:bg-red-200",
@@ -13,18 +14,9 @@ const variant = [
 ];
 
 export const TrendingCoins: FCProps = () => {
-  const { isPending, error, data } = useQuery<ITrendingCoinData | null>({
-    queryKey: ["trending-coins"],
-    queryFn: () => api.getTrendingCoins(),
-  });
+  const { isPending, error, data } = useTrendingCoinData();
 
-  if (isPending) {
-    return "Loading...";
-  }
-
-  if (error || !data) {
-    return;
-  }
+  if (isPending || error || !data) return;
 
   return (
     <div className="bg-white p-6 rounded-xl selection:bg-stone-200">

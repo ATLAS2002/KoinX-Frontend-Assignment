@@ -15,3 +15,8 @@ export const getPercentage = (num: number) => {
   parts[1] = parts[1].padEnd(2, "0");
   return parts.join(".").concat("%");
 };
+
+export const truncateAmount = (val: string) => {
+  const parts = val.split(".");
+  return parts[0].concat(".", parts[1].slice(0, 2));
+};

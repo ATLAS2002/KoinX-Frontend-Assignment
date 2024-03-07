@@ -1,4 +1,4 @@
-import { getPercentage } from "@/lib/utils";
+import { getPercentage, truncateAmount } from "@/lib/utils";
 import { z } from "zod";
 
 const trendingCoinSchema = z
@@ -28,7 +28,7 @@ const trendingCoinSchema = z
       logo: item.thumb,
       symbol: item.symbol,
       price: {
-        value: item.data.price,
+        value: truncateAmount(item.data.price),
         hike: item.data.price_change_percentage_24h.usd >= 0,
         change: getPercentage(item.data.price_change_percentage_24h.usd),
       },

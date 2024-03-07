@@ -7,6 +7,8 @@ import { GetStartedCard } from "@/components/get-started-card";
 import { TrendingCoins } from "@/components/trending-coins";
 import { Team } from "@/components/team";
 import { Tokenomics } from "@/components/tokenomics";
+import { Recommendations } from "@/components/recommendations";
+import { TrendingCoinProvider } from "@/context/trending-coin-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,24 +25,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReactQueryProvider>
-        <body className={inter.className}>
-          <Header />
-          <main className="flex min-h-screen flex-col overflow-x-hidden bg-white-base">
-            <section className="px-12 translate-x-1">
-              <div className="w-full flex pt-12 h-screen flex-col lg:flex-row">
-                <div className="flex flex-col w-2/3 h-fit gap-5">
-                  {children}
-                  <Tokenomics />
-                  <Team />
+        <TrendingCoinProvider>
+          <body className={inter.className}>
+            <Header />
+            <main className="flex min-h-screen flex-col overflow-x-hidden bg-white-base gap-32">
+              <section className="h-full px-12">
+                <div className="w-full flex pt-12 flex-col lg:flex-row">
+                  <div className="flex flex-col w-2/3 h-fit gap-5">
+                    {children}
+                    <Tokenomics />
+                    <Team />
+                  </div>
+                  <aside className="w-1/3 flex flex-col gap-5 pl-5">
+                    <GetStartedCard />
+                    <TrendingCoins />
+                  </aside>
                 </div>
-                <aside className="w-1/3 flex flex-col gap-5 pl-5">
-                  <GetStartedCard />
-                  <TrendingCoins />
-                </aside>
-              </div>
-            </section>
-          </main>
-        </body>
+              </section>
+              <footer className="bg-white w-full min-h-56">
+                <Recommendations />
+              </footer>
+            </main>
+          </body>
+        </TrendingCoinProvider>
       </ReactQueryProvider>
     </html>
   );
