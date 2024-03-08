@@ -1,13 +1,16 @@
-import type { DecisionProps, ITeamMember } from "@/types";
 import members from "./data/team-data.json";
 import distribution from "./data/distribution.json";
-import { validateTeamMemberSchema } from "@/validators/team-member-schema";
+import { validator, teamMemberSchema } from "@/validators";
+import type { DecisionProps, ITeamMember } from "@/types";
 
 export class LocalAPI {
   getTeamMemberData(): { data: ITeamMember | null } {
-    const memberData = validateTeamMemberSchema(members);
+    const memberData = validator<{ members: ITeamMember }>(
+      teamMemberSchema,
+      members
+    );
 
-    return { data: memberData };
+    return { data: memberData?.members ?? null };
   }
 
   getInitialDistribution() {
