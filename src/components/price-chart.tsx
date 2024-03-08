@@ -1,5 +1,5 @@
 import { FCProps } from "@/types";
-import { TradingViewWidget } from "./ui/trading-view-widget";
+import { default as TradingViewWidget } from "./ui/trading-view-widget";
 import { useMarketData } from "@/context/market-data-provider";
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 import { Triangle } from "./ui/triangle";
