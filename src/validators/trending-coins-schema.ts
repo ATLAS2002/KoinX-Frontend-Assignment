@@ -1,7 +1,7 @@
 import { getPercentage, truncateAmount } from "@/lib/utils";
 import { z } from "zod";
 
-const trendingCoinSchema = z
+export const trendingCoinSchema = z
   .object({
     coins: z.array(
       z.object({
@@ -37,18 +37,3 @@ const trendingCoinSchema = z
   );
 
 export type ITrendingCoinData = z.infer<typeof trendingCoinSchema>;
-
-export const validateTrendingCoinData = (
-  rawData: unknown
-): ITrendingCoinData | null => {
-  try {
-    const data = trendingCoinSchema.parse(rawData);
-    return data;
-  } catch (err) {
-    console.error(
-      "[VALIDATION] Trending Coin data does not match the schema:",
-      err
-    );
-    return null;
-  }
-};
