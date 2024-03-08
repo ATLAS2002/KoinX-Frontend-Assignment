@@ -36,7 +36,7 @@ const Member: FCProps<Omit<ITeamMember[number], "id">> = ({
   description,
   designation,
 }) => (
-  <div className="flex justify-between items-center bg-blue-base rounded-lg p-3">
+  <div className="flex flex-col md:flex-row ustify-between items-center bg-blue-base rounded-lg p-3">
     <div className="h-full flex flex-col justify-center items-center mx-3">
       <Image
         src={image}

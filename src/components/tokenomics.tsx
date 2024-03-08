@@ -11,7 +11,30 @@ export const Tokenomics: FCProps = () => {
       <h2 className="text-xl font-semibold flex gap-2 items-center">
         Initial Distribution
       </h2>
-      <div>
+      <div className="md:hidden -translate-x-8">
+        <DonutPieChart
+          series={[
+            {
+              data,
+              innerRadius: 60,
+              outerRadius: 90,
+            },
+          ]}
+          margin={{ bottom: 50, left: 50 }}
+          width={450}
+          height={250}
+          slotProps={{
+            legend: {
+              direction: "row",
+              position: {
+                vertical: "bottom",
+                horizontal: "middle",
+              },
+            },
+          }}
+        />
+      </div>
+      <div className="hidden md:block">
         <DonutPieChart
           series={[
             {

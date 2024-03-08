@@ -58,7 +58,7 @@ const Card: FCProps<{
   },
 }) => {
   return (
-    <CarouselItem className="border-2 border-white-off w-1/6 aspect-[16/9] rounded-lg basis-1/5 p-3">
+    <CarouselItem className="border-2 border-white-off w-1/6 aspect-[16/9] rounded-lg sm:basis-3/4 lg:basis-1/5 p-3">
       <div className="flex items-center">
         <div className="flex gap-1 items-center">
           <Avatar className="scale-75">

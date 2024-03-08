@@ -47,7 +47,7 @@ const Item: FCProps = ({ children, className }) => {
   return (
     <CarouselItem
       className={cn(
-        "basis-1/2 flex justify-between rounded-lg p-8 pt-4 pl-4",
+        "sm:basis-4/5 md:basis-1/2 flex justify-between rounded-lg p-8 pt-4 pl-4",
         className
       )}
     >
@@ -57,7 +57,7 @@ const Item: FCProps = ({ children, className }) => {
           Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis
           enim tincidunt.
         </h1>
-        <p className="text-sm text-grey-600">
+        <p className="text-xs md:text-sm text-grey-600">
           Lorem ipsum dolor sit amet consectetur. Ac phasellus risus est
           faucibus metus quis. Amet sapien quam viverra adipiscing condimentum.
           Ac consectetur et pretium in a bibendum in. Sed vitae sit nisi viverra

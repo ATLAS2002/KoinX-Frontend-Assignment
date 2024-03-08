@@ -1,8 +1,6 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
-import { cryptoAPI as api } from "@/api";
-import type { FCProps, ITrendingCoinData } from "@/types";
+import type { FCProps } from "@/types";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Triangle } from "./ui/triangle";
 import { cn } from "@/lib/utils";
@@ -15,7 +13,6 @@ const variant = [
 
 export const TrendingCoins: FCProps = () => {
   const { isPending, error, data } = useTrendingCoinData();
-
   if (isPending || error || !data) return;
 
   return (
