@@ -3,18 +3,28 @@ import { FCProps } from "@/types";
 import { Separator } from "./ui/separator";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { useMarketData } from "@/context/market-data-provider";
 
 export const AboutSection: FCProps = () => {
+  const { data } = useMarketData();
+
   return (
     <section className="flex flex-col gap-4 bg-white p-6 rounded-lg pb-12">
-      <h1 className="font-semibold text-2xl">About Cryptocurrency</h1>
-      <h2 className="text-xl font-semibold">What is Bitcoin?</h2>
+      <h1 className="font-semibold text-2xl">
+        About {data?.name ?? "Cryptocurrency"}
+      </h1>
+      <h2 className="text-xl font-semibold">
+        What is {data?.name ?? "Bitcoin"}?
+      </h2>
       <p>
-        Bitcoin’s price today is US$16,951.82, with a 24-hour trading volume of
-        $19.14 B. BTC is +0.36% in the last 24 hours. It is currently -7.70%
-        from its 7-day all-time high of $18,366.66, and 3.40% from its 7-day
-        all-time low of $16,394.75. BTC has a circulating supply of 19.24 M BTC
-        and a max supply of 21 M BTC.
+        Bitcoin’s price today is US$
+        {data?.value.usd.toLocaleString() ?? "16,951.82"}, with a 24-hour
+        trading volume of ${data?.vol.usd.toLocaleString() ?? "19.14 B"}.{" "}
+        {data?.symbol ?? "BTC"} is {data?.hike ? "+" : "-"}
+        {data?.change.usd ?? "0.36"}% in the last 24 hours. It is currently
+        -7.70% from its 7-day all-time high of $18,366.66, and 3.40% from its
+        7-day all-time low of $16,394.75. BTC has a circulating supply of 19.24
+        M BTC and a max supply of 21 M BTC.
       </p>
       <Separator />
       <h2 className="text-xl font-semibold">Lorem ipsum dolor sit amet</h2>
@@ -45,12 +55,17 @@ export const AboutSection: FCProps = () => {
           eget. Ullamcorper dui
         </p>
         <Separator />
-        <h1 className="font-semibold text-2xl">Already Holding Crypto?</h1>
-        <div className="flex gap-8">
-          <Card image="/image-1.png" className="bg-green-gradient">
+        <h1 className="font-semibold text-2xl">
+          Already Holding {data?.name ?? "Crypto"}?
+        </h1>
+        <div className="flex-row md:flex gap-8">
+          <Card image="/image-1.png" className="bg-green-gradient mb-3 md:mb-0">
             Calculate you Profits
           </Card>
-          <Card image="/image-2.png" className="bg-orange-gradient">
+          <Card
+            image="/image-2.png"
+            className="bg-orange-gradient mt-3 md:mt-0"
+          >
             Calculate you tax liability
           </Card>
         </div>
