@@ -5,14 +5,16 @@ import { Hamburger } from "./ui/hamburger";
 
 export const Header: FCProps = () => {
   return (
-    <header className="bg-white flex h-20 w-full shadow-sm">
-      <Image
-        src="/koinx-logo.png"
-        alt="KoinX"
-        width={100}
-        height={80}
-        className="mx-6 lg:mx-14"
-      />
+    <header className="bg-white flex h-12 md:h-20 w-full shadow-sm">
+      <div className="relative h-full aspect-[1.4] flex items-center mx-6 lg:mx-14">
+        <Image
+          src="/koinx-logo.png"
+          alt="KoinX"
+          fill
+          priority
+          className="absolute scale-110"
+        />
+      </div>
       <div className="w-full flex-row-reverse flex items-center">
         <Hamburger />
         <HeaderButtons className="hidden lg:block mr-14 ml-8 bg-blue-gradient px-6 text-white hover:opacity-80">

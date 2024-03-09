@@ -28,22 +28,22 @@ export default function RootLayout({
       <Provider>
         <body className={inter.className}>
           <Header />
-          <main className="flex min-h-screen flex-col overflow-x-hidden bg-white-base gap-32">
+          <main className="flex min-h-screen flex-col overflow-x-hidden bg-white-base">
             <BreadCrumbs />
-            <section className="h-full px-12">
+            <section className="h-full px-4 md:px-12">
               <div className="w-full flex pt-12 flex-col lg:flex-row">
                 <div className="flex flex-col lg:w-2/3 h-fit gap-5">
                   {children}
                   <Tokenomics />
                   <Team />
                 </div>
-                <aside className="w-full lg:w-1/3 flex flex-col gap-5 pl-5">
+                <aside className="w-full my-6 md:mt-0 lg:w-1/3 flex flex-col gap-5 md:pl-5">
                   <GetStartedCard />
                   <TrendingCoins />
                 </aside>
               </div>
             </section>
-            <footer className="bg-white w-full min-h-56">
+            <footer className="bg-white w-full md:mt-32">
               <Recommendations />
             </footer>
           </main>

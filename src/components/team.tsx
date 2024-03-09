@@ -6,9 +6,9 @@ export const Team: FCProps = () => {
   const { data: members } = api.getTeamMemberData();
 
   return (
-    <section className="flex flex-col gap-6 bg-white rounded-lg p-6 pb-10">
-      <h1 className="font-semibold text-2xl">Team</h1>
-      <p>
+    <section className="flex flex-col gap-3 md:gap-6 bg-white rounded-lg p-3 md:p-6 pb-10">
+      <h1 className="font-semibold text-lg md:text-2xl">Team</h1>
+      <p className="text-sm">
         Lorem ipsum dolor sit amet consectetur. Id consequat adipiscing arcu
         nibh. Eget mattis in mi integer sit egestas. Proin tempor id pretium
         quam. Facilisis purus convallis quam augue.
@@ -36,7 +36,7 @@ const Member: FCProps<Omit<ITeamMember[number], "id">> = ({
   description,
   designation,
 }) => (
-  <div className="flex flex-col md:flex-row ustify-between items-center bg-blue-base rounded-lg p-3">
+  <div className="flex flex-col md:flex-row justify-between items-center bg-blue-base rounded-lg p-3">
     <div className="h-full flex flex-col justify-center items-center mx-3">
       <Image
         src={image}
@@ -48,6 +48,6 @@ const Member: FCProps<Omit<ITeamMember[number], "id">> = ({
       <h1 className="font-medium">{name}</h1>
       <p className="text-xs font-medium text-grey">{designation}</p>
     </div>
-    <p className="text-sm p-6 pl-2 w-5/6">{description}</p>
+    <p className="text-xs md:text-sm p-3 md:p-6 pl-2 md:w-5/6">{description}</p>
   </div>
 );

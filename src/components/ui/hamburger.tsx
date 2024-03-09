@@ -5,7 +5,7 @@ export const Hamburger: FCProps = ({ className }) => {
   return (
     <button
       className={cn(
-        "lg:hidden scale-150 mr-6 p-2 rounded-full transition hover:bg-slate-200 motion-safe:duration-300",
+        "lg:hidden scale-110 mr-4 p-2 rounded-full transition hover:bg-slate-200 motion-safe:duration-300",
         className
       )}
     >

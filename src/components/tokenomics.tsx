@@ -6,9 +6,9 @@ export const Tokenomics: FCProps = () => {
   const data = localAPI.getInitialDistribution();
 
   return (
-    <section className="flex flex-col bg-white p-6 pb-12 gap-6 rounded-lg">
-      <h1 className="font-semibold text-2xl">Tokenomics</h1>
-      <h2 className="text-xl font-semibold flex gap-2 items-center">
+    <section className="flex flex-col bg-white p-3 pb-6 md:p-6 md:pb-12 gap-3 md:gap-6 rounded-lg">
+      <h1 className="font-semibold text-lg md:text-2xl">Tokenomics</h1>
+      <h2 className="text-sm md:text-xl font-semibold text-grey-700">
         Initial Distribution
       </h2>
       <div className="md:hidden -translate-x-8">
@@ -20,8 +20,8 @@ export const Tokenomics: FCProps = () => {
               outerRadius: 90,
             },
           ]}
-          margin={{ bottom: 50, left: 50 }}
-          width={450}
+          margin={{ bottom: 50, left: 75 }}
+          width={375}
           height={250}
           slotProps={{
             legend: {
@@ -48,7 +48,7 @@ export const Tokenomics: FCProps = () => {
           height={180}
         />
       </div>
-      <p>
+      <p className="text-xs md:text-base">
         Lorem ipsum dolor sit amet consectetur. Cras aliquet tristique ornare
         vestibulum nunc dignissim vel consequat. Leo etiam nascetur bibendum
         amet enim sit eget leo amet. At metus orci augue fusce eleifend lectus
