@@ -1,10 +1,11 @@
 import { FCProps } from "@/types";
-import { default as TradingViewWidget } from "./ui/trading-view-widget";
+import TradingViewWidget from "./ui/trading-view-widget";
 import { useMarketData } from "@/context/market-data-provider";
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 import { Triangle } from "./ui/triangle";
 import { Separator } from "./ui/separator";
 import { cn } from "@/lib/utils";
+import { Skeleton } from "./ui/skeleton";
 
 const variant = [
   "bg-red-base text-red-primary selection:bg-red-200",
@@ -13,7 +14,20 @@ const variant = [
 
 export const PriceChart: FCProps = () => {
   const { data, error, isPending } = useMarketData();
-  if (isPending || error || !data) return;
+  if (isPending)
+    return (
+      <div>
+        <div className="flex h-12 items-center gap-4">
+          <Skeleton className="h-full bg-white aspect-square rounded-full" />
+          <Skeleton className="h-4/5 w-1/2 max-w-32 bg-white" />
+          <Skeleton className="h-full w-1/2 max-w-24 lg:ml-20 bg-white" />
+        </div>
+        <Skeleton className="h-32 bg-white my-7" />
+        <Skeleton className="aspect-video h-60 lg:h-80 w-full bg-white my-4" />
+      </div>
+    );
+
+  if (error || !data) return;
 
   return (
     <div>
@@ -32,10 +46,10 @@ export const PriceChart: FCProps = () => {
           symbol={data.symbol}
           rank={data.rank}
         />
-        <div className="flex pl-2 scale-[0.85] -translate-x-8 md:translate-x-0 md:scale-100">
-          <h1 className="text-4xl font-medium">
+        <div className="flex pl-2 scale-[0.85] md:scale-100 -translate-x-8 md:translate-x-0">
+          <h1 className="text-2xl md:text-4xl font-medium">
             ${data.value.usd.toLocaleString()}
-            <span className="block text-lg my-1">
+            <span className="block text-base md:text-lg my-1">
               ₹ {Math.round(data.value.inr).toLocaleString()}
             </span>
           </h1>
@@ -51,7 +65,7 @@ export const PriceChart: FCProps = () => {
           <p className="text-grey font-medium mx-4 my-1">(24H)</p>
         </div>
         <Separator />
-        <div>
+        <div className="h-[325px] pb-8">
           <h3 className="font-medium">{data.name} Price Chart (USD)</h3>
           <TradingViewWidget symbol={data.symbol} className="h-full" />
         </div>
@@ -76,7 +90,7 @@ const CryptoHeader: FCProps<{
       <p className="text-grey-400 text-lg font-semibold">
         {symbol.toUpperCase()}
       </p>
-      <div className="bg-slate-500 min-w-max max-w-max mx-10 scale-105 opacity-90 p-2 text-white font-medium rounded-md">
+      <div className="bg-slate-500 min-w-max max-w-max mx-10 scale-90 md:scale-105 opacity-90 py-2 px-4 text-white font-medium rounded-md">
         Rank #{rank}
       </div>
     </div>
